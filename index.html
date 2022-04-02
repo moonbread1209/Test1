@@ -1,0 +1,59 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>카톡 공유</title>
+<script type="text/JavaScript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+<body>
+    <input type="button" onClick="sendLinkCustom();" value="Custom"/>
+    <input type="button" onClick="sendLinkDefault();" value="Default"/>
+
+<script type="text/javascript">
+    function sendLinkCustom() {
+        Kakao.init("98edb5e3b571d7f57b9e817c74d9082c");
+        Kakao.Link.sendCustom({
+            templateId: 74323
+        });
+    }
+</script>
+
+<script>
+try {
+  function sendLinkDefault() {
+    Kakao.init('98edb5e3b571d7f57b9e817c74d9082c')
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '💌 함께 온 메시지',
+        description: '천옥 받아가세요.',
+        imageUrl:
+          'https://postfiles.pstatic.net/MjAyMjA0MDJfNTkg/MDAxNjQ4ODgwMTUyNzU2.NUHFESSfuRmFV0fEJLIAs4d3MBlgKVybUXO02ptShmcg.RlLzWT9CIcy5IqspRkJGvU71uXADZebS0E_D_MrMH5Ig.JPEG.elrhyme080/%EC%B2%9C%EC%98%A5.jpg?type=w966',
+        link: {
+          mobileWebUrl: 'https://developers.kakao.com',
+          webUrl: 'https://developers.kakao.com',
+        },
+      },
+      buttons: [
+        {
+          title: '선물 확인하가',
+          link: {
+            mobileWebUrl: 'https://developers.kakao.com',
+            webUrl: 'https://developers.kakao.com',
+          },
+        },
+        {
+          title: '메시지카드 보기',
+          link: {
+            mobileWebUrl: 'https://developers.kakao.com',
+            webUrl: 'https://developers.kakao.com',
+          },
+        },
+      ],
+    })
+  }
+; window.kakaoDemoCallback && window.kakaoDemoCallback() }
+catch(e) { window.kakaoDemoException && window.kakaoDemoException(e) }
+</script>
+   
+</body>
+</html>
